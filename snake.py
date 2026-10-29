@@ -8,7 +8,7 @@ Exercises
 4. Change the snake to respond to mouse clicks.
 """
 
-from random import randrange
+from random import choice, randrange  # choice:elegir una dirección al azar para mover la comida, randrange: posiciones aleatorias
 from turtle import *
 
 from freegames import square, vector
