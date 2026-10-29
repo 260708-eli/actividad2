@@ -28,7 +28,14 @@ def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
-
+def move_food():
+    steps = [vector(10, 0), vector(-10, 0), vector(0, 10), vector(0, -10)] #son las posibles direcciones que están a 10px de cada una
+    valid = [food + step for step in steps if inside(food + step)] #Gaurda los pasos que dejan la comida dentro de la ventana
+ # Si hay al menos un paso válido, elige uno al azar y mueve la comida
+    if valid:
+        new_food = choice(valid)
+        food.x = new_food.x
+        food.y = new_food.y
 def move():
     """Move snake forward one segment."""
     head = snake[-1].copy()
